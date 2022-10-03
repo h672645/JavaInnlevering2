@@ -84,9 +84,8 @@ public class Tabeller {
 
 		int i = 0;
 		int posisjon = -1;
-		int sjekk = tall;
 		while(i < tabell.length) {
-			if(sjekk == tabell[i]) {
+			if(tall == tabell[i]) {
 				posisjon = i;
 			}
 			i++;
@@ -99,10 +98,9 @@ public class Tabeller {
 	// f)
 	public static int[] reverser(int[] tabell) {
 
-		int lengde = tabell.length-1;
 		int[] revTabell = new int[tabell.length];
 		int revTabellTellar = 0;
-		for(int i = lengde; i >= 0; i--) {
+		for(int i = tabell.length-1; i >= 0; i--) {
 			
 			revTabell[revTabellTellar] = tabell[i];
 			
@@ -115,15 +113,11 @@ public class Tabeller {
 
 	// g)
 	public static boolean erSortert(int[] tabell) {
-		
-		int startplass = 0;
-		int nesteposisjon = 1;
+
 		boolean sjekk = true;
 		
 		for(int i = 0; i < tabell.length-1; i++) {
-			if(tabell[startplass] < tabell[nesteposisjon]) {
-				startplass++;
-				nesteposisjon++;
+			if(tabell[i] < tabell[i+1]) {
 			} else {
 			sjekk = false;
 			}
